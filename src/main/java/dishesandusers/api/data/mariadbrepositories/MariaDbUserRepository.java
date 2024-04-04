@@ -12,9 +12,22 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * MariaDbUserRepository provides implementation for interacting with a MariaDB database
+ * to manage User entities.
+ */
 public class MariaDbUserRepository extends MariaDbRepository implements UserRepository {
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    /**
+     * Constructs a new MariaDbUserRepository with the specified authentication information.
+     *
+     * @param authenticationInfo The authentication information for connecting to the MariaDB database.
+     * @param user               The username for authentication.
+     * @param password           The password for authentication.
+     * @throws SQLException           If a database access error occurs or this method is called on a closed connection.
+     * @throws ClassNotFoundException If the driver class cannot be found.
+     */
     public MariaDbUserRepository(String authenticationInfo, String user, String password) throws SQLException, ClassNotFoundException {
         super(authenticationInfo, user, password);
     }

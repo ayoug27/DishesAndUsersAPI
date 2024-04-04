@@ -7,6 +7,13 @@ import java.util.ArrayList;
  * It defines the methods that any class implementing this interface should provide.
  */
 public interface UserRepository {
+    /**
+     * Adds a new user to the repository.
+     *
+     * @param username The username of the user.
+     * @param password The password of the user.
+     * @return The User object representing the added user.
+     */
     User addUser(String username, String password);
 
     /**
@@ -27,14 +34,21 @@ public interface UserRepository {
     /**
      * Retrieves a user by their credentials.
      *
-     * @param name The name of the user.
+     * @param username The username of the user.
      * @param password The password of the user.
      * @return The User object if found, null otherwise.
      */
-    User getUserByCredentials(String name, String password);
+    User getUserByCredentials(String username, String password);
 
-
-    User updateUser(int id, String name, String password);
+    /**
+     * Updates user information in the repository.
+     *
+     * @param id       The id of the user to be updated.
+     * @param username The new username of the user.
+     * @param password The new password of the user.
+     * @return The updated User object if successful, null otherwise.
+     */
+    User updateUser(int id, String username, String password);
 
     /**
      * Deletes a user by their id.

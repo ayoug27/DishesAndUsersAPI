@@ -42,6 +42,15 @@ public class User {
         this.createdAt = createdAt;
     }
 
+    /**
+     * Constructor for the User class with admin flag.
+     *
+     * @param id        Unique identifier for the user
+     * @param username  Username of the user
+     * @param password  Password of the user
+     * @param admin     Flag indicating if the user is an admin
+     * @param createdAt Date when the user was created
+     */
     public User(int id, String username, String password, boolean admin, Date createdAt) {
         this.id = id;
         this.username = username;
@@ -68,18 +77,38 @@ public class User {
         return username;
     }
 
+    /**
+     * Returns the password of the user.
+     *
+     * @return password of the user
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets the unique identifier of the user.
+     *
+     * @param id id of the user
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Sets the username of the user.
+     *
+     * @param username username of the user
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * Sets the password of the user.
+     *
+     * @param password password of the user
+     */
     public void setPassword(String password) {
         this.password = password;
     }
@@ -93,10 +122,20 @@ public class User {
         return createdAt;
     }
 
+    /**
+     * Checks if the user is an admin.
+     *
+     * @return true if the user is an admin, false otherwise
+     */
     public boolean isAdmin() {
         return admin;
     }
 
+    /**
+     * Sets the admin status of the user.
+     *
+     * @param admin true if the user is an admin, false otherwise
+     */
     public void setAdmin(boolean admin) {
         this.admin = admin;
     }

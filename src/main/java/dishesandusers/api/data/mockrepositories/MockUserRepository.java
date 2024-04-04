@@ -6,20 +6,35 @@ import dishesandusers.api.domain.user.UserRepository;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * MockUserRepository is a mock implementation of UserRepository for testing purposes.
+ * It provides hardcoded user data.
+ */
 public class MockUserRepository implements UserRepository {
     private final ArrayList<User> users;
 
+    /**
+     * Constructor for MockUserRepository.
+     * Initializes the repository with some mock user data.
+     */
     public MockUserRepository() {
         users = new ArrayList<>();
 
-        User user1 = new User(0, "zizi", "zizi", new Date());
+        User user1 = new User(0, "ayoug", "password", new Date());
 
         users.add(user1);
     }
 
+    /**
+     * Adds a new user to the repository (not implemented in mock).
+     *
+     * @param username The username of the user.
+     * @param password The password of the user.
+     * @return The User object representing the added user.
+     */
     @Override
     public User addUser(String username, String password) {
-        return null;
+        return null; // Not implemented in mock
     }
 
     /**
@@ -46,28 +61,36 @@ public class MockUserRepository implements UserRepository {
     /**
      * Retrieves a user by their credentials.
      *
-     * @param name     The name of the user.
+     * @param username The username of the user.
      * @param password The password of the user.
      * @return The User object if found, null otherwise.
      */
     @Override
-    public User getUserByCredentials(String name, String password) {
-        return users.stream().filter(user -> user.getUsername().equals(name) && user.getPassword().equals(password)).findFirst().orElse(null);
-    }
-
-    @Override
-    public User updateUser(int id, String name, String password) {
-        return null;
+    public User getUserByCredentials(String username, String password) {
+        return users.stream().filter(user -> user.getUsername().equals(username) && user.getPassword().equals(password)).findFirst().orElse(null);
     }
 
     /**
-     * Deletes a user by their id.
+     * Updates user information in the repository (not implemented in mock).
+     *
+     * @param id       The id of the user to be updated.
+     * @param username The new username of the user.
+     * @param password The new password of the user.
+     * @return The updated User object if successful, null otherwise.
+     */
+    @Override
+    public User updateUser(int id, String username, String password) {
+        return null; // Not implemented in mock
+    }
+
+    /**
+     * Deletes a user by their id (not implemented in mock).
      *
      * @param id The id of the user to be deleted.
      * @return true if the user was deleted successfully, false otherwise.
      */
     @Override
     public boolean deleteUserById(int id) {
-        return false;
+        return false; // Not implemented in mock
     }
 }
