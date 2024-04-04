@@ -9,6 +9,14 @@ import java.util.ArrayList;
  */
 public interface DishRepository {
 
+    /**
+     * Adds a new dish to the repository.
+     *
+     * @param name The name of the dish to be added.
+     * @param price The price of the dish to be added.
+     * @param description The description of the dish to be added.
+     * @return The Dish object that was added.
+     */
     Dish addDish(String name, double price, String description);
 
     /**
@@ -26,7 +34,15 @@ public interface DishRepository {
      */
     Dish getDishById(int id);
 
-
+    /**
+     * Updates a dish in the repository.
+     *
+     * @param id The id of the dish to be updated. This should be a valid integer id.
+     * @param name The new name of the dish.
+     * @param price The new price of the dish.
+     * @param description The new description of the dish.
+     * @return The Dish object that was updated.
+     */
     Dish updateDish(int id, String name, double price, String description);
 
     /**

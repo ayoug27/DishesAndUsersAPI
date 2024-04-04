@@ -1,6 +1,6 @@
 package dishesandusers.api.domain.user;
 
-import jakarta.json.bind.annotation.JsonbProperty;
+import com.google.javascript.jscomp.jarjar.com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
@@ -15,11 +15,16 @@ public class User {
     private String username;
 
     /** Password of the user */
-    private String password; // Password of the user
+    private transient String password; // Password of the user
+
+    /** Flag indicating if the user is an admin */
+    @SerializedName("is_admin")
+    private boolean admin;
 
     /** Date when the user was created */
-    @JsonbProperty("created_at")
+    @SerializedName("created_at")
     private final Date createdAt; // Date when the user was created
+
 
     /**
      * Constructor for the User class.
@@ -33,6 +38,15 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.admin = false;
+        this.createdAt = createdAt;
+    }
+
+    public User(int id, String username, String password, boolean admin, Date createdAt) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.admin = admin;
         this.createdAt = createdAt;
     }
 
@@ -54,6 +68,10 @@ public class User {
         return username;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -73,5 +91,13 @@ public class User {
      */
     public Date getCreatedAt() {
         return createdAt;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }

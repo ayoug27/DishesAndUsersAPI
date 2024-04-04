@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="dfa6fb2b-ecdf-45d7-b456-2202f4b0b97c" name="espace virtuel" url="http://ftp-espace-virtuel-ayoub.alwaysdata.net">
+        <fileTransfer host="ftp-espace-virtuel-ayoub.alwaysdata.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
